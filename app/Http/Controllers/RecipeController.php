@@ -1,10 +1,13 @@
-<?php /** @noinspection ALL */
+<?php
+
+/** @noinspection ALL */
 
 namespace App\Http\Controllers;
 
 use App\Models\Recipe;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RecipeController extends Controller
 {
@@ -13,21 +16,39 @@ class RecipeController extends Controller
         $results = Recipe::all();
 
         return response()->json(
-            ["data" => $results, "message" => "", "error" => ""]);
-
+            ["data" => $results,
+                "message" => "",
+                "error" => ""],
+            200
+        );
     }
 
-    public function create(Request $request): JsonResponse
+    public function create(Request $request)
     {
-        $create = new Recipe();
-        $create->description = $request->description;
-        $create->valor = $request->valor;
-        $create->data = $request->data;
-        $create->save();
+        $validate = DB::table('recipes')
+            ->where("description", "=", $request->description)
+            ->whereDate("data", $request->data)->first();
 
-        return response()->json(
-            ["data" => $create, "message" => "Recipe Saved", "error" => ""], 201);
-
+        if ($validate == null) {
+            $create = new Recipe();
+//            $create->description = $request->description;
+//            $create->valor = $request->valor;
+//            $create->data = $request->data;
+//            $create->save();
+            return response()->json(
+                ["data" => $create,
+                    "message" => "Recipe Saved",
+                    "error" => ""],
+                201
+            );
+        } else {
+              return  response()->json(
+                    ["data" => $validate,
+                        "message" => "Duplicate registration",
+                        "error" => ""],
+                    400
+                );
+        }
     }
 
 
@@ -36,10 +57,12 @@ class RecipeController extends Controller
         $detail = Recipe::all()->find($id);
 
         return response()->json(
-            ["data" => $detail, "message" => "", "error" => ""]);
+            ["data" => $detail, "message" => "", "error" => ""],
+            200
+        );
     }
 
-    public function update(Request $request ,$id): JsonResponse
+    public function update(Request $request, $id): JsonResponse
     {
         $update = Recipe::all()->find($id);
         $update->description = $request->description;
@@ -48,8 +71,9 @@ class RecipeController extends Controller
         $update->save();
 
         return response()->json(
-            ["data" => $update, "message" => "Recipe updated", "error" => ""]);
-
+            ["data" => $update, "message" => "Recipe updated", "error" => ""],
+            200
+        );
     }
 
     public function delete($id): JsonResponse
@@ -57,6 +81,8 @@ class RecipeController extends Controller
         $delete = Recipe::all()->find($id)->delete();
 
         return response()->json(
-            ["data" => $delete, "message" => "Recipe delete", "error" => ""]);
+            ["data" => $delete, "message" => "Recipe delete", "error" => ""],
+            200
+        );
     }
 }
