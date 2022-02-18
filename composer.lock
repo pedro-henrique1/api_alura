@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "5a5b9b0ee78bb2896c6a430f9afcccb0",
+=======
+    "content-hash": "c0cc12f37a1b0d33377b03825282bbb3",
+>>>>>>> develop
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -961,6 +965,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v8.83.0",
             "source": {
                 "type": "git",
@@ -971,6 +976,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/29bc8779103909ebc428478b339ee6fa8703e193",
                 "reference": "29bc8779103909ebc428478b339ee6fa8703e193",
+=======
+            "version": "v8.82.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "411d5243c58cbf12b0fc89cab1ceb50088968c27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/411d5243c58cbf12b0fc89cab1ceb50088968c27",
+                "reference": "411d5243c58cbf12b0fc89cab1ceb50088968c27",
+>>>>>>> develop
                 "shasum": ""
             },
             "require": {
@@ -1130,7 +1147,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
             "time": "2022-02-08T15:44:51+00:00"
+=======
+            "time": "2022-02-01T16:13:57+00:00"
+>>>>>>> develop
         },
         {
             "name": "laravel/sanctum",
@@ -1325,6 +1346,7 @@
         },
         {
             "name": "league/commonmark",
+<<<<<<< HEAD
             "version": "2.2.2",
             "source": {
                 "type": "git",
@@ -1335,6 +1357,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/13d7751377732637814f0cda0e3f6d3243f9f769",
                 "reference": "13d7751377732637814f0cda0e3f6d3243f9f769",
+=======
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/commonmark.git",
+                "reference": "f8afb78f087777b040e0ab8a6b6ca93f6fc3f18a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/f8afb78f087777b040e0ab8a6b6ca93f6fc3f18a",
+                "reference": "f8afb78f087777b040e0ab8a6b6ca93f6fc3f18a",
+>>>>>>> develop
                 "shasum": ""
             },
             "require": {
@@ -1425,7 +1459,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2022-02-13T15:00:57+00:00"
+=======
+            "time": "2022-01-25T14:37:33+00:00"
+>>>>>>> develop
         },
         {
             "name": "league/config",
@@ -7892,7 +7930,12 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
+<<<<<<< HEAD
         "php": "^8.0"
+=======
+        "php": "^7.3|^8.0",
+        "ext-json": "*"
+>>>>>>> develop
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"
