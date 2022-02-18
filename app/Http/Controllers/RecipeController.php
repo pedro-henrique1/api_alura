@@ -31,10 +31,10 @@ class RecipeController extends Controller
 
         if ($validate == null) {
             $create = new Recipe();
-//            $create->description = $request->description;
-//            $create->valor = $request->valor;
-//            $create->data = $request->data;
-//            $create->save();
+            $create->description = $request->description;
+            $create->valor = $request->valor;
+            $create->data = $request->data;
+            $create->save();
             return response()->json(
                 ["data" => $create,
                     "message" => "Recipe Saved",
